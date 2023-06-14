@@ -1,0 +1,91 @@
+* { box-sizing: border-box; }
+
+:root {
+    --color-dark: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    --color-light: radial-gradient(ellipse at bottom, #5788A7 0%, #0E59B9 100%);
+}
+
+body {
+    background: var(--color-light);
+    transition: 0.3s;
+}
+
+body.dark {
+    background: var(--color-dark);
+}
+
+.dark .Note {
+    background: var(--color-dark);
+}
+
+.dark .Note-Modal {
+    background: var(--color-dark);
+}
+
+.dark .Note-Form 
+label input {
+    display: none;
+}
+
+.switch {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin-left: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+    width: 60px;
+    height: 30px;
+    padding: 3px;
+    border-radius: 15px;
+    background: var(--color-dark);
+    cursor: pointer;
+}
+
+.handle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    transition: 0.3s;
+}
+
+.handle::before, .handle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.handle::before {
+    background: #fff;
+}
+
+.handle::after {
+    background: #fff;
+    opacity: 0;
+    translate: -7px -7px;
+}
+
+body.dark .switch {
+    background: #fff;
+}
+
+body.dark .handle{
+    translate: 30px 0; 
+}
+
+body.dark .handle::after {
+    opacity: 1;
+}
+
+body.dark .handle::before {
+    background: var(--color-dark);
+}
+
+
+
